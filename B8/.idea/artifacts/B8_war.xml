@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="B8:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>B8</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="B8-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="B8:war exploded" />
+    </root>
+  </artifact>
+</component>

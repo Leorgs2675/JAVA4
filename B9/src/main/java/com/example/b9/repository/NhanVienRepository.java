@@ -1,5 +1,6 @@
 package com.example.b9.repository;
 
+import com.example.b9.entity.CoSoLamViec;
 import com.example.b9.entity.NhanVien;
 import com.example.b9.utils.HibernateUtils;
 import java.util.List;
@@ -13,13 +14,17 @@ public class NhanVienRepository {
     public List<NhanVien> getAll(){
         return session.createQuery("from NhanVien").list();
     }
+    public List<CoSoLamViec> getCB(){
+        return session.createQuery("from CoSoLamViec ").list();
+    }
+
     public NhanVien getOne(Long id) {
         return session.get(NhanVien.class, id);
     }
     public void save(NhanVien nhanVien) {
         try {
             session.getTransaction().begin();
-            session.save(nhanVien);
+            session.persist(nhanVien);
             session.getTransaction().commit();
         }catch (Exception e) {
             session.getTransaction().rollback();
@@ -29,7 +34,7 @@ public class NhanVienRepository {
     public void update(NhanVien nhanVien) {
         try {
             session.getTransaction().begin();
-            session.update(nhanVien);
+            session.merge(nhanVien);
             session.getTransaction().commit();
         }catch (Exception e) {
             session.getTransaction().rollback();
@@ -48,6 +53,6 @@ public class NhanVienRepository {
     }
 
     public static void main(String[] args) {
-        System.out.printf(new NhanVienRepository().getAll().toString());
+        System.out.printf(new NhanVienRepository().getCB().toString());
     }
 }

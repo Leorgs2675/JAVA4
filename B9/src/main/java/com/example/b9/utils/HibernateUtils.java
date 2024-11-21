@@ -3,6 +3,7 @@ package com.example.b9.utils;
 
 
 
+import com.example.b9.entity.CoSoLamViec;
 import com.example.b9.entity.NhanVien;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -28,7 +29,7 @@ public class HibernateUtils {
 
         conf.setProperties(properties);
         conf.addAnnotatedClass(NhanVien.class);
-//        conf.addAnnotatedClass(DonViTinh.class);
+        conf.addAnnotatedClass(CoSoLamViec.class);
         ServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .applySettings(conf.getProperties()).build();
         FACTORY = conf.buildSessionFactory(registry);

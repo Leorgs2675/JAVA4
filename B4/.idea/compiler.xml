@@ -10,8 +10,5 @@
         <module name="B4" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="B4" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>
